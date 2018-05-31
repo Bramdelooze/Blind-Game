@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 33886053982825822}
   - component: {fileID: 65165316708593434}
   - component: {fileID: 23149564991224218}
-  - component: {fileID: 114621615006703550}
   - component: {fileID: 95202226739820650}
+  - component: {fileID: 114903926331334422}
   m_Layer: 0
   m_Name: FloorCube
   m_TagString: Untagged
@@ -114,7 +114,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114621615006703550
+--- !u!114 &114903926331334422
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -122,6 +122,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1746334233882038}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e482e4cd0f1fb4105bdcfdf1a0491842, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e439eef357d741ed807d33d0503b0cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
