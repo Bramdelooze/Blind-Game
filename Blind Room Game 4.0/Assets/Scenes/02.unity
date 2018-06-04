@@ -4921,8 +4921,8 @@ GameObject:
   - component: {fileID: 211404799}
   - component: {fileID: 211404796}
   - component: {fileID: 211404797}
-  - component: {fileID: 211404798}
   - component: {fileID: 211404795}
+  - component: {fileID: 211404800}
   m_Layer: 0
   m_Name: Deur_4
   m_TagString: Untagged
@@ -5003,18 +5003,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.7953842, y: 3.0743673, z: 0.4361154}
   m_Center: {x: -0.9025152, y: 1.5427259, z: -0.0680577}
---- !u!114 &211404798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 211404793}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e482e4cd0f1fb4105bdcfdf1a0491842, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drawerAnimCont: {fileID: 0}
 --- !u!33 &211404799
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5023,6 +5011,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 211404793}
   m_Mesh: {fileID: 4300000, guid: cddd2ddadc4a71e479a8bf0c803c55b9, type: 3}
+--- !u!114 &211404800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 211404793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6dcf8136f0ac164eb77548e75bec93c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: 0
+  linkedObject: {fileID: 0}
 --- !u!1 &211970155
 GameObject:
   m_ObjectHideFlags: 0
@@ -7000,6 +7001,86 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.75
+--- !u!82 &310203636
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 310203629}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 70c6769248da9c54393c604d2bed5e76, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.073
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &317073895
 GameObject:
   m_ObjectHideFlags: 0
@@ -17254,6 +17335,19 @@ GameObject:
   m_PrefabParentObject: {fileID: 1910773189833582, guid: 0412e54474eeba646b8b465d81320fee,
     type: 2}
   m_PrefabInternal: {fileID: 1291438856}
+--- !u!114 &749303194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 749303193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6dcf8136f0ac164eb77548e75bec93c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: 1
+  linkedObject: {fileID: 211404793}
 --- !u!65 &749303195
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17266,18 +17360,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9, y: 0.32, z: 0.5}
   m_Center: {x: 0.009834193, y: 0.02414, z: -0.010251798}
---- !u!114 &749303196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 749303193}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e482e4cd0f1fb4105bdcfdf1a0491842, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drawerAnimCont: {fileID: 1335522923}
 --- !u!114 &749303199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32269,6 +32351,7 @@ GameObject:
   - component: {fileID: 1335522926}
   - component: {fileID: 1335522931}
   - component: {fileID: 1335522930}
+  - component: {fileID: 1335522932}
   - component: {fileID: 1335522929}
   m_Layer: 0
   m_Name: Lade_1
@@ -32401,6 +32484,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.75
+--- !u!114 &1335522932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1335522923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6dcf8136f0ac164eb77548e75bec93c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: 1
+  linkedObject: {fileID: 0}
 --- !u!1 &1341315129
 GameObject:
   m_ObjectHideFlags: 0
