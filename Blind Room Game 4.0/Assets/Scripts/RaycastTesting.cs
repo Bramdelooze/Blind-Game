@@ -12,7 +12,7 @@ public class RaycastTesting : MonoBehaviour {
 		// Shoot a ray from a Vector to a direction, check for hit and draw line
 		Ray ray = new Ray(transform.position, transform.forward);
 		RaycastHit hit;
-		Debug.DrawLine(transform.position, transform.position + transform.forward * maxRayDistance, Color.red);
+		//Debug.DrawLine(transform.position, transform.position + transform.forward * maxRayDistance, Color.red);
 
 		// Check if the ray hits object with the right layer
 		if (Physics.Raycast(ray, out hit, maxRayDistance, activeLayers))
