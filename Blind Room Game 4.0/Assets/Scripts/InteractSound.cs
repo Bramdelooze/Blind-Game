@@ -21,14 +21,15 @@ public class InteractSound : ObjectInteraction {
 	protected override void Update () {
 
 		if (base.objectTriggered) {
-			Debug.Log("PlaySound");
+			
             PlaySound();
 		}
 
 		base.Update();
 	}
 
-	void PlaySound () {
+	private void PlaySound () {
+		Debug.Log("PlaySound");
 		audioSource.clip = soundEffect;
 		audioSource.Play();
 		base.objectTriggered = false;

@@ -6,32 +6,27 @@ public abstract class ObjectInteraction : MonoBehaviour {
 
 	protected bool objectTriggered;
 	public bool inTrigger;
-	private bool allowedToTrigger;
 
     [SerializeField]
-    private GameObject linkedObject;
+	private ObjectInteraction linkedObject;
 
+	// Only allow to trigger animation or sound if interactable is true
     public bool interactable = true;
 
 	[SerializeField]
-	protected float waitTime;
+	protected float triggerAgainWaitTime;
 
-	protected virtual void Start () {
-		allowedToTrigger = true;
+	protected virtual void Start () 
+	{
+		
 	}
 
-	protected virtual void Update() { 
-		
+	protected virtual void Update() 
+	{ 
 		if (inTrigger) {
 			if (Input.GetKeyDown(KeyCode.F) && interactable) {
-                if (linkedObject != null)
-                {
-                    print("Interacted with " + gameObject.name);
-                    linkedObject.gameObject.GetComponent<ObjectInteraction>().interactable = true;
-                    print("Can now interact with " + linkedObject.name);
-                }
-                //StartCoroutine("TriggerObjectCo");
-				//allowedToTrigger = false;
+				ActivateLinkedObject();
+				StartCoroutine("TriggerObjectCo");
 			}
 		}
 	}
@@ -41,11 +36,23 @@ public abstract class ObjectInteraction : MonoBehaviour {
         inTrigger = false;
     }
 
-    //IEnumerator TriggerObjectCo() {
-    //	objectTriggered = !objectTriggered;
-    //	yield return new WaitForSeconds(waitTime);
-    //	allowedToTrigger = true;
-    //	inTrigger = false;
-    //}
+	protected void ActivateLinkedObject() 
+	{ 
+		if (linkedObject != null)
+        {
+        	print("Interacted with " + gameObject.name);
+			linkedObject.interactable = true;
+			print("Can now interact with " + linkedObject.name);
+        }
+	
+	}
+
+	private IEnumerator TriggerObjectCo() {
+		
+		objectTriggered = !objectTriggered;
+		yield return new WaitForSeconds(triggerAgainWaitTime);
+		//allowedToTrigger = true;
+		inTrigger = false;
+	}
 
 }

@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class InteractItem : ObjectInteraction {
 
+	private Collider myCollider;
+
     // Use this for initialization
     protected override void Start()
     {
+		myCollider = GetComponent<Collider>();
+
         base.Start();
     }
 
@@ -15,16 +19,18 @@ public class InteractItem : ObjectInteraction {
     {
         if (!base.interactable)
         {
-            gameObject.GetComponent<Collider>().enabled = false;
+			myCollider.enabled = false;
         } else
         {
-            gameObject.GetComponent<Collider>().enabled = true;
+			myCollider.enabled = true;
         }
 
-        if (base.inTrigger && base.interactable && Input.GetKeyDown(KeyCode.F))
+        if (base.interactable && Input.GetKeyDown(KeyCode.F))
         {
-            Destroy(gameObject);
+			base.ActivateLinkedObject();
+			Destroy(gameObject);	
         }
+
         base.Update();
     }
 }
