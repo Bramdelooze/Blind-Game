@@ -17,14 +17,14 @@ public class FadeFluent : MonoBehaviour {
 	private float speed;
 
 	// Use this for initialization
-	private void Start()
+	void Start()
 	{
 		meshRenderer = GetComponent<MeshRenderer>();
 		meshRenderer.enabled = true;
 	}
 
 	// Update is called once per frame
-	private void Update()
+	void Update()
 	{
 		// Check current color and set alpha to transparency
 		meshRenderer.material.color = thisColor;
@@ -41,17 +41,17 @@ public class FadeFluent : MonoBehaviour {
 
 	}
 
-	private void OnTriggerEnter(Collider other)
+	void OnTriggerEnter(Collider other)
 	{
 		isColliding = true;
 	}
 
-	private void OnTriggerExit(Collider other)
+	void OnTriggerExit(Collider other)
 	{
 		isColliding = false;
 	}
 
-	private void FadeIn() 
+	void FadeIn() 
 	{
 		meshRenderer.enabled = true;
 		isFading = true;
@@ -64,7 +64,7 @@ public class FadeFluent : MonoBehaviour {
 		}
 	}
 
-	private void FadeOut() 
+	void FadeOut() 
 	{
 		isFading = true;
 		transparency = alphaValue;

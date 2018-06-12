@@ -4921,9 +4921,8 @@ GameObject:
   - component: {fileID: 211404799}
   - component: {fileID: 211404796}
   - component: {fileID: 211404797}
-  - component: {fileID: 211404795}
   - component: {fileID: 211404798}
-  - component: {fileID: 211404800}
+  - component: {fileID: 211404795}
   m_Layer: 0
   m_Name: Deur_4
   m_TagString: Untagged
@@ -5012,13 +5011,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 211404793}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9510a9315fcfc4c9f9695663cc9b0632, type: 3}
+  m_Script: {fileID: 11500000, guid: e482e4cd0f1fb4105bdcfdf1a0491842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inTrigger: 0
-  linkedObject: {fileID: 0}
-  interactable: 0
-  triggerAgainWaitTime: 0
+  drawerAnimCont: {fileID: 0}
 --- !u!33 &211404799
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5027,23 +5023,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 211404793}
   m_Mesh: {fileID: 4300000, guid: cddd2ddadc4a71e479a8bf0c803c55b9, type: 3}
---- !u!95 &211404800
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 211404793}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &211970155
 GameObject:
   m_ObjectHideFlags: 0
@@ -16586,10 +16565,11 @@ GameObject:
   - component: {fileID: 726890533}
   - component: {fileID: 726890532}
   - component: {fileID: 726890531}
-  - component: {fileID: 726890536}
-  - component: {fileID: 726890535}
   - component: {fileID: 726890530}
-  m_Layer: 8
+  - component: {fileID: 726890536}
+  - component: {fileID: 726890534}
+  - component: {fileID: 726890535}
+  m_Layer: 0
   m_Name: Lade_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16616,15 +16596,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 726890528}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9510a9315fcfc4c9f9695663cc9b0632, type: 3}
+  m_Script: {fileID: 11500000, guid: e482e4cd0f1fb4105bdcfdf1a0491842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inTrigger: 0
-  linkedObject: {fileID: 0}
-  interactable: 1
-  triggerAgainWaitTime: 2
+  drawerAnimCont: {fileID: 0}
 --- !u!65 &726890531
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16680,6 +16657,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 726890528}
   m_Mesh: {fileID: 4300008, guid: 366e5d129e29a3e4eaebd17db7c764fb, type: 3}
+--- !u!114 &726890534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 726890528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60935c94d9d7e6f46ac172e338acd3ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slideAnim: {fileID: 726890535}
+  slidedOut: 0
 --- !u!95 &726890535
 Animator:
   serializedVersion: 3
@@ -17284,13 +17274,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 749303193}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc8f34170f8969044b76efe41053ac61, type: 3}
+  m_Script: {fileID: 11500000, guid: e482e4cd0f1fb4105bdcfdf1a0491842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inTrigger: 0
-  linkedObject: {fileID: 211404798}
-  interactable: 0
-  triggerAgainWaitTime: 2
+  drawerAnimCont: {fileID: 1335522923}
 --- !u!114 &749303199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22884,9 +22871,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inTrigger: 0
-  linkedObject: {fileID: 0}
-  interactable: 1
-  triggerAgainWaitTime: 3
+  waitTime: 3
   soundEffect: {fileID: 8300000, guid: 0e8d0061c4d59449b8d8cac29a124389, type: 3}
 --- !u!1 &938011235
 GameObject:
@@ -25910,11 +25895,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000011246327920, guid: 5adffe4d9af2845498854b0e2516f2d5, type: 2}
       propertyPath: m_TagString
-      value: Untagged
+      value: InteractionObject
       objectReference: {fileID: 0}
     - target: {fileID: 1000011668636908, guid: 5adffe4d9af2845498854b0e2516f2d5, type: 2}
       propertyPath: m_TagString
-      value: Untagged
+      value: InteractionObject
       objectReference: {fileID: 0}
     - target: {fileID: 1000011668636908, guid: 5adffe4d9af2845498854b0e2516f2d5, type: 2}
       propertyPath: m_Layer
@@ -25922,7 +25907,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000011246327920, guid: 5adffe4d9af2845498854b0e2516f2d5, type: 2}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4000012460703508, guid: 5adffe4d9af2845498854b0e2516f2d5, type: 2}
       propertyPath: m_LocalPosition.y
@@ -31613,10 +31598,6 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1910773189833582, guid: 0412e54474eeba646b8b465d81320fee, type: 2}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0412e54474eeba646b8b465d81320fee, type: 2}
   m_IsPrefabParent: 0
@@ -32395,10 +32376,11 @@ GameObject:
   - component: {fileID: 1335522928}
   - component: {fileID: 1335522927}
   - component: {fileID: 1335522925}
-  - component: {fileID: 1335522931}
-  - component: {fileID: 1335522929}
   - component: {fileID: 1335522926}
-  m_Layer: 8
+  - component: {fileID: 1335522931}
+  - component: {fileID: 1335522930}
+  - component: {fileID: 1335522929}
+  m_Layer: 0
   m_Name: Lade_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32438,15 +32420,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1335522923}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9510a9315fcfc4c9f9695663cc9b0632, type: 3}
+  m_Script: {fileID: 11500000, guid: e482e4cd0f1fb4105bdcfdf1a0491842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inTrigger: 0
-  linkedObject: {fileID: 749303196}
-  interactable: 1
-  triggerAgainWaitTime: 2
+  drawerAnimCont: {fileID: 0}
 --- !u!23 &1335522927
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -32507,6 +32486,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1335522930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1335522923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60935c94d9d7e6f46ac172e338acd3ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slideAnim: {fileID: 1335522929}
+  slidedOut: 0
 --- !u!114 &1335522931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36232,10 +36224,11 @@ GameObject:
   - component: {fileID: 1484602303}
   - component: {fileID: 1484602302}
   - component: {fileID: 1484602300}
-  - component: {fileID: 1484602306}
-  - component: {fileID: 1484602305}
   - component: {fileID: 1484602301}
-  m_Layer: 8
+  - component: {fileID: 1484602306}
+  - component: {fileID: 1484602304}
+  - component: {fileID: 1484602305}
+  m_Layer: 0
   m_Name: Lade_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36274,15 +36267,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1484602298}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9510a9315fcfc4c9f9695663cc9b0632, type: 3}
+  m_Script: {fileID: 11500000, guid: e482e4cd0f1fb4105bdcfdf1a0491842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inTrigger: 0
-  linkedObject: {fileID: 0}
-  interactable: 1
-  triggerAgainWaitTime: 2
+  drawerAnimCont: {fileID: 0}
 --- !u!23 &1484602302
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36326,6 +36316,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1484602298}
   m_Mesh: {fileID: 4300006, guid: 366e5d129e29a3e4eaebd17db7c764fb, type: 3}
+--- !u!114 &1484602304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1484602298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60935c94d9d7e6f46ac172e338acd3ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slideAnim: {fileID: 1484602305}
+  slidedOut: 0
 --- !u!95 &1484602305
 Animator:
   serializedVersion: 3
@@ -47804,7 +47807,6 @@ MonoBehaviour:
   activeLayers:
     serializedVersion: 2
     m_Bits: 256
-  raycastedObject: {fileID: 0}
 --- !u!1 &1938882966
 GameObject:
   m_ObjectHideFlags: 0
@@ -54098,10 +54100,11 @@ GameObject:
   - component: {fileID: 2145586658}
   - component: {fileID: 2145586657}
   - component: {fileID: 2145586655}
-  - component: {fileID: 2145586661}
-  - component: {fileID: 2145586660}
   - component: {fileID: 2145586656}
-  m_Layer: 8
+  - component: {fileID: 2145586661}
+  - component: {fileID: 2145586659}
+  - component: {fileID: 2145586660}
+  m_Layer: 0
   m_Name: Lade_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54140,15 +54143,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2145586653}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9510a9315fcfc4c9f9695663cc9b0632, type: 3}
+  m_Script: {fileID: 11500000, guid: e482e4cd0f1fb4105bdcfdf1a0491842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inTrigger: 0
-  linkedObject: {fileID: 0}
-  interactable: 1
-  triggerAgainWaitTime: 2
+  drawerAnimCont: {fileID: 0}
 --- !u!23 &2145586657
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -54192,6 +54192,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2145586653}
   m_Mesh: {fileID: 4300004, guid: 366e5d129e29a3e4eaebd17db7c764fb, type: 3}
+--- !u!114 &2145586659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2145586653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60935c94d9d7e6f46ac172e338acd3ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slideAnim: {fileID: 2145586660}
+  slidedOut: 0
 --- !u!95 &2145586660
 Animator:
   serializedVersion: 3

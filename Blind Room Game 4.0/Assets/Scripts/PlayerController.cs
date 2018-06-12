@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-	[SerializeField]
-    private float speed;
+    public float speed;
 
 	// Use this for initialization
-	private void Start () {
+	void Start () {
 		//Cursor.lockState = CursorLockMode.Locked;
 	}
 	
 	// Update is called once per frame
-	private void FixedUpdate () {
+	void FixedUpdate () {
 
 		float translation = Input.GetAxis("Vertical") * speed;
 		float straffe = Input.GetAxis("Horizontal") * speed;

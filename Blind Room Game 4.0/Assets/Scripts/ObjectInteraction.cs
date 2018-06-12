@@ -6,52 +6,29 @@ public abstract class ObjectInteraction : MonoBehaviour {
 
 	protected bool objectTriggered;
 	public bool inTrigger;
-
-    [SerializeField]
-	private ObjectInteraction linkedObject;
-
-	// Only allow to trigger animation or sound if interactable is true
-    public bool interactable = true;
+	private bool allowedToTrigger;
 
 	[SerializeField]
-	protected float triggerAgainWaitTime;
+	protected float waitTime;
 
-	protected virtual void Start () 
-	{
-		
+	protected virtual void Start () {
+		allowedToTrigger = true;
 	}
 
-	protected virtual void Update() 
-	{ 
+	protected virtual void Update() { 
+		
 		if (inTrigger) {
-			if (Input.GetKeyDown(KeyCode.F) && interactable) {
-				ActivateLinkedObject();
+			if (Input.GetKeyDown(KeyCode.F)) {
 				StartCoroutine("TriggerObjectCo");
+				allowedToTrigger = false;
 			}
 		}
 	}
 
-    private void LateUpdate()
-    {
-        inTrigger = false;
-    }
-
-	protected void ActivateLinkedObject() 
-	{ 
-		if (linkedObject != null)
-        {
-        	print("Interacted with " + gameObject.name);
-			linkedObject.interactable = true;
-			print("Can now interact with " + linkedObject.name);
-        }
-	
-	}
-
-	private IEnumerator TriggerObjectCo() {
-		
+	IEnumerator TriggerObjectCo() {
 		objectTriggered = !objectTriggered;
-		yield return new WaitForSeconds(triggerAgainWaitTime);
-		//allowedToTrigger = true;
+		yield return new WaitForSeconds(waitTime);
+		allowedToTrigger = true;
 		inTrigger = false;
 	}
 
