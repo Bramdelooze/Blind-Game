@@ -16,8 +16,7 @@ public class InteractAnimation : ObjectInteraction {
 	// Update is called once per frame
 	protected override void Update () {
 
-		animator.SetBool("IsTriggered", base.objectTriggered);
-
+        //animator.SetBool("IsTriggered", base.objectTriggered);
 		base.Update();
 	}
 

@@ -8,6 +8,11 @@ public abstract class ObjectInteraction : MonoBehaviour {
 	public bool inTrigger;
 	private bool allowedToTrigger;
 
+    [SerializeField]
+    private GameObject linkedObject;
+
+    public bool interactable = true;
+
 	[SerializeField]
 	protected float waitTime;
 
@@ -18,18 +23,29 @@ public abstract class ObjectInteraction : MonoBehaviour {
 	protected virtual void Update() { 
 		
 		if (inTrigger) {
-			if (Input.GetKeyDown(KeyCode.F)) {
-				StartCoroutine("TriggerObjectCo");
-				allowedToTrigger = false;
+			if (Input.GetKeyDown(KeyCode.F) && interactable) {
+                if (linkedObject != null)
+                {
+                    print("Interacted with " + gameObject.name);
+                    linkedObject.gameObject.GetComponent<ObjectInteraction>().interactable = true;
+                    print("Can now interact with " + linkedObject.name);
+                }
+                //StartCoroutine("TriggerObjectCo");
+				//allowedToTrigger = false;
 			}
 		}
 	}
 
-	IEnumerator TriggerObjectCo() {
-		objectTriggered = !objectTriggered;
-		yield return new WaitForSeconds(waitTime);
-		allowedToTrigger = true;
-		inTrigger = false;
-	}
+    private void LateUpdate()
+    {
+        inTrigger = false;
+    }
+
+    //IEnumerator TriggerObjectCo() {
+    //	objectTriggered = !objectTriggered;
+    //	yield return new WaitForSeconds(waitTime);
+    //	allowedToTrigger = true;
+    //	inTrigger = false;
+    //}
 
 }
